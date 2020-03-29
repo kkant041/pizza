@@ -1,0 +1,17 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+            Order | Regular Pizza
+{% endblock title %}
+    
+
+{% block body %}
+        Regular Pizza
+        
+        <ul>
+        {% for pizza in regularpizza_list %}
+                <li>{{ pizza }}</li>     
+        {% endfor %}
+        </ul>
+                
+{% endblock body %}

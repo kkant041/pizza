@@ -1,0 +1,16 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+            Order | Subs
+{% endblock title %}
+    
+
+{% block body %}
+        Subs
+
+        <ul>
+                {% for subs in sub_list %}
+                <li>{{ subs }}</li>     
+                {% endfor %}
+        </ul>
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends 'orders/layout.html' %}
+
+        {% block title %}
+            Log In
+        {% endblock title %}
+
+
+    {% block body %}
+        <h2>Log In</h2>
+        {% if message %}
+            <div>
+                {{ message }}
+            </div>
+        {% endif %}
+        <form action="{% url 'accounts:login' %}">
+            {% csrf_token %}
+            <input type="text" name="username" maxlength="150" autofocus required><br>
+            <input type="password" name="password" autocomplete="new-password" required><br>
+            <button type="submit">Sign up</button>
+        </form>
+    {% endblock body %}
+    

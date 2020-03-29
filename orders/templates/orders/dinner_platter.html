@@ -1,0 +1,16 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+            Order | Dinner Platter
+{% endblock title %}
+    
+
+{% block body %}
+        Dinner Platter
+
+        <ul>
+                {% for dinner_platter in dinner_platter_list %}
+                <li>{{ dinner_platter }}</li>     
+                {% endfor %}
+        </ul>
+{% endblock body %}

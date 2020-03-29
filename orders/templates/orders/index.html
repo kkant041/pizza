@@ -1,0 +1,18 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+            Order
+{% endblock title %}
+    
+
+{% block body %}
+        Select from the given menu
+        <ul>
+            <li><a href="{% url 'orders:menu0' %}" >Regular Pizza</a></li>
+            <li><a href="{% url 'orders:menu1' %}"> Sicilian Pizza</a></li>
+            <li><a href="{% url 'orders:menu2' %}"> Subs</a></li>
+            <li><a href="{% url 'orders:menu3' %}"> Pasta</a></li>
+            <li><a href="{% url 'orders:menu4' %}"> Salad</a></li>
+            <li><a href="{% url 'orders:menu5' %}"> Dinner Platter</a></li>
+        </ul>
+{% endblock body %}
