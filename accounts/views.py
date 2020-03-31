@@ -19,7 +19,7 @@ def signup_view(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect("orders/")
-    
+
     else:
         form = SignUpForm()
         return render(request, "accounts/signup.html", {'form': form})
@@ -31,7 +31,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect("orders/")
+            return redirect("home/orders")
         else:
             return render(request, "users/login.html", {"message": "Invalid credentials."})
     else:
