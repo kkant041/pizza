@@ -31,7 +31,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect("home/orders")
+            return redirect("orders/")
         else:
             return render(request, "users/login.html", {"message": "Invalid credentials."})
     else:
