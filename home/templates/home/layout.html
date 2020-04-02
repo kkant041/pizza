@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'orders/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <title>
             {% block title %}
@@ -14,6 +15,22 @@
         </title>
     </head>
     <body>
+        <header>
+            <div id="mt">
+                <a href="{% url 'home:index' %}">Pinnochio's Pizza & Subs</a>
+            </div>
+            <div id="mr">
+                <ul>
+                    <li>Call Us</li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                </ul>
+            </div>
+            <div id="nav-bar">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </header>
+        <div>I am awesome.</div>
         {% block body %}
         {% endblock body %}
     </body>
