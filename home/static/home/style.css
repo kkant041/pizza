@@ -10,7 +10,7 @@ header {
   top: 0px;
   left: 0px;
   padding: 0 90px;
-  background: #8E1576;
+  background: #8e1576;
   width: 100%;
   height: 60px;
   box-sizing: border-box;
@@ -26,29 +26,24 @@ header #mt a {
   color: #ececec;
   text-decoration: none;
   font-size: 1.7em;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
-
-
 
 header #mr {
   float: right;
 }
 
-header #mr ul{
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+header #mr ul {
+  padding: 19 0px;
+  margin: 0px;
 }
 
 header #mr ul li {
   text-decoration: none;
   float: right;
   margin: 0 15px;
-  line-height: 25px;
   font-size: 1.2em;
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
   font-weight: 500;
   list-style-type: none;
 }
@@ -66,24 +61,24 @@ header #mr ul li a {
 }
 
 header #mr ul li a:hover,
-header #mr ul li a.active{
+header #mr ul li a.active {
   text-decoration: none;
   color: #ffffff;
 }
 
 #mkmc:hover,
-#mkmc.active{
+#mkmc.active {
   text-decoration: none;
   color: #ffffff;
 }
 
 #mkmc:hover,
-#mkmc.active{
+#mkmc.active {
   text-decoration: none;
   color: #ffffff;
 }
 
-#nav-bar{
+#nav-bar {
   color: #f1f1f1;
   display: none;
   float: left;
@@ -91,26 +86,23 @@ header #mr ul li a.active{
   margin-top: 15.7px;
 }
 
-
-
-@media (max-width: 806px){
-  header{
+@media (max-width: 806px) {
+  header {
     padding: 0 20px;
-
   }
 
-  #nav-bar{
+  #nav-bar {
     display: block;
     margin-bottom: 20px;
   }
 
-  header #mt{
+  header #mt {
     float: right;
     width: 93%;
     text-align: center;
   }
 
-  header #mr{
+  header #mr {
     display: none;
     position: absolute;
   }
