@@ -23,27 +23,29 @@ header #mt {
 }
 
 header #mt a {
-  color: #ffffff;
+  color: #ececec;
   text-decoration: none;
   font-size: 1.7em;
   font-family: 'Pacifico', cursive;
 }
 
-.kkmc {
-  border-left: #ffffff solid;
-  margin-left: 20px;
-  padding-left: 35px;
-}
+
 
 header #mr {
   float: right;
 }
 
+header #mr ul{
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 header #mr ul li {
   text-decoration: none;
   float: right;
-  padding: 0 15px;
-  color: #ffffff;
+  margin: 0 15px;
   line-height: 25px;
   font-size: 1.2em;
   font-family: 'Mukta', sans-serif;
@@ -54,18 +56,44 @@ header #mr ul li {
 header #mr ul li a {
   text-decoration: none;
   padding: 0 0px;
+  color: #ececec;
+}
+
+#mkmc {
+  border-left: #f1f1f1 solid;
+  padding-left: 30px;
+  color: #ececec;
+}
+
+header #mr ul li a:hover,
+header #mr ul li a.active{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#mkmc:hover,
+#mkmc.active{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#mkmc:hover,
+#mkmc.active{
+  text-decoration: none;
   color: #ffffff;
 }
 
 #nav-bar{
-  color: #ffffff;
+  color: #f1f1f1;
   display: none;
-  float: right;
+  float: left;
   font-size: 1.6em;
   margin-top: 15.7px;
 }
 
-@media (max-width: 800px){
+
+
+@media (max-width: 806px){
   header{
     padding: 0 20px;
 
@@ -75,6 +103,13 @@ header #mr ul li a {
     display: block;
     margin-bottom: 20px;
   }
+
+  header #mt{
+    float: right;
+    width: 93%;
+    text-align: center;
+  }
+
   header #mr{
     display: none;
     position: absolute;
