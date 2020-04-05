@@ -103,7 +103,6 @@ header #mr ul li a.active {
   }
 
   header #mr {
-    display: none;
     position: absolute;
     top: 60px;
     left: 0px;
@@ -111,6 +110,16 @@ header #mr ul li a.active {
     width: 60%;
     background-color: #560947;
     height: 130px;
+  }
+
+  .show{
+    transition: display 2s ease-out;
+    display: block;
+  }
+
+  .hide{
+    transition: display 2s ease-out;
+    display: none;
   }
 
   header #mr ul {
