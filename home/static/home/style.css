@@ -40,7 +40,7 @@ header #mr ul {
 
 header #mr ul li {
   text-decoration: none;
-  float: right;
+  display: inline-block;
   margin: 0 15px;
   font-size: 1.2em;
   font-family: "Mukta", sans-serif;
@@ -72,8 +72,8 @@ header #mr ul li a.active {
   color: #ffffff;
 }
 
-#mkmc:hover,
-#mkmc.active {
+#mt .a:hover,
+#mt .a.active {
   text-decoration: none;
   color: #ffffff;
 }
@@ -84,6 +84,7 @@ header #mr ul li a.active {
   float: left;
   font-size: 1.6em;
   margin-top: 15.7px;
+  cursor: pointer;
 }
 
 @media (max-width: 806px) {
@@ -103,7 +104,15 @@ header #mr ul li a.active {
   }
 
   header #mr {
-    display: none;
+    display: block;
     position: absolute;
+  }
+
+  #mr {
+    float: none;
+  }
+
+  header #mr ul li{
+    display: block;
   }
 }
