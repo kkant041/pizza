@@ -79,7 +79,7 @@ header #mr ul li a.active {
 }
 
 #nav-bar {
-  color: #f1f1f1;
+  color: #ececec;
   display: none;
   float: left;
   font-size: 1.6em;
@@ -94,7 +94,6 @@ header #mr ul li a.active {
 
   #nav-bar {
     display: block;
-    margin-bottom: 20px;
   }
 
   header #mt {
@@ -106,13 +105,47 @@ header #mr ul li a.active {
   header #mr {
     display: block;
     position: absolute;
-  }
-
-  #mr {
+    top: 60px;
+    left: 0px;
     float: none;
+    width: 60%;
+    background-color: #560947;
+    height: 130px;
   }
 
-  header #mr ul li{
+  header #mr ul {
+    padding: 0px;
+  }
+
+  header #mr ul li {
     display: block;
+    margin: 0px 20px;
+    padding: 5px 20px;
+    text-align: left;
+  }
+
+  #signup{
+    border-top: 1px #ececec solid;
+    border-bottom: 1px #ececec solid;
+  }
+
+  #mkmc {
+    padding-left: 0px;
+    border: 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  header #mt a {
+    font-size: 1.3em;
+  }
+
+  header #mr {
+    width: 80%;
+    height: 120px;
+  }
+
+  header #mr ul li {
+    font-size: 1.1em;
   }
 }
