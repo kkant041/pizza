@@ -110,16 +110,17 @@ header #mr ul li a.active {
     width: 60%;
     background-color: #560947;
     height: 130px;
+    overflow: hidden;
   }
 
   .show{
-    transition: display 2s ease-out;
-    display: block;
+    transition: max-height .7s ease-out;
+    max-height: 130px;
   }
 
   .hide{
-    transition: display 2s ease-out;
-    display: none;
+    transition: max-height .7s ease-out;
+    max-height: 0px !important;
   }
 
   header #mr ul {
