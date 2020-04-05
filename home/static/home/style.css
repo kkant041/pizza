@@ -103,7 +103,7 @@ header #mr ul li a.active {
   }
 
   header #mr {
-    display: block;
+    display: none;
     position: absolute;
     top: 60px;
     left: 0px;
