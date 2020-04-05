@@ -23,7 +23,7 @@
         <div id="mt">
             <a href="{% url 'home:index' %}">Pinnochio's Pizza & Subs</a>
         </div>
-        <div id="mr" class="show">
+        <div id="mr" class="hide">
             <ul>
                 <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                 <li id="signup"><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
@@ -41,11 +41,6 @@
     <script>
         var scrwdh = screen.width;
         var div = document.getElementById('mr');
-        function rep() {
-            if (scrwdh < 807) {
-                div.className = div.className.replace('show', 'hide');
-            }
-        }
         var hidebutton = document.querySelector('#nav-bar');
         hidebutton.onclick = function () {
             if (div.className.indexOf('hide') !== -1) {
