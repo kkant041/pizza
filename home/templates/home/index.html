@@ -1,12 +1,13 @@
 {% extends 'home/layout.html' %}
 
-{% block title %}
+{% block title %} WELCOME {% endblock title %}
 
-WELCOME
+{% block navbar %}
+<li><a href="{% url 'accounts:login' %}">Log In</a></li>
+<li id="signup"><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
 
-{% endblock title %}
-
-
-{% block blockname %}
-    TODO
-{% endblock blockname %}
+{% block body %}
+TODO
+{% endblock body %}

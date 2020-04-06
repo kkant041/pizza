@@ -25,16 +25,18 @@
         </div>
         <div id="mr" class="hide">
             <ul>
-                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-                <li id="signup"><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                <li id="mkmc">Call Us</li>
+
+                {% block navbar %}
+
+                {% endblock navbar %}
+
             </ul>
         </div>
         <div id="nav-bar">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
     </header>
-    <div>I am awesome.</div>
+
     {% block body %}
     {% endblock body %}
 

@@ -1,21 +1,26 @@
 {% extends 'home/layout.html' %}
 
-        {% block title %}
-            Log In
-        {% endblock title %}
+{% block title %}
+Log In
+{% endblock title %}
+
+{% block navbar %}
+<li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
 
 
-    {% block body %}
-        <h2>Log In</h2>
-        {% if message %}
-            <div>
-                {{ message }}
-            </div>
-        {% endif %}
-        <form method="post" action="{% url 'accounts:login' %}">
-            {% csrf_token %}
-            <input type="text" name="username" maxlength="150" autofocus required><br>
-            <input type="password" name="password" autocomplete="new-password" required><br>
-            <button type="submit">Submit</button>
-        </form>
-    {% endblock body %}
+{% block body %}
+<h2>Log In</h2>
+{% if message %}
+<div>
+    {{ message }}
+</div>
+{% endif %}
+<form method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    <input type="text" name="username" maxlength="150" autofocus required><br>
+    <input type="password" name="password" autocomplete="new-password" required><br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock body %}

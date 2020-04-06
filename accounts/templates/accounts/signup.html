@@ -1,15 +1,20 @@
 {% extends 'home/layout.html' %}
 
-        {% block title %}
-            Welcome
-        {% endblock title %}
+{% block title %}
+Welcome
+{% endblock title %}
+
+{% block navbar %}
+<li><a href="{% url 'accounts:login' %}">Log In</a></li>
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
 
 
-    {% block body %}
-        <h2>Sign up</h2>
-            <form method="post" action="{% url 'accounts:signup' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="Submit">Sign up</button>
-        </form>
-    {% endblock body %}
+{% block body %}
+<h2>Sign up</h2>
+<form method="post" action="{% url 'accounts:signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="Submit">Sign up</button>
+</form>
+{% endblock body %}

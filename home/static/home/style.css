@@ -107,19 +107,18 @@ header #mr ul li a.active {
     top: 60px;
     left: 0px;
     float: none;
-    width: 60%;
+    width: 40%;
     background-color: #560947;
-    height: 130px;
     overflow: hidden;
   }
 
-  .show{
-    transition: max-height .7s ease-out;
+  .show {
+    transition: max-height 0.7s ease-out;
     max-height: 130px;
   }
 
-  .hide{
-    transition: max-height .7s ease-out;
+  .hide {
+    transition: max-height 0.7s ease-out;
     max-height: 0px !important;
   }
 
@@ -134,14 +133,15 @@ header #mr ul li a.active {
     text-align: left;
   }
 
-  #signup{
+  #signup {
     border-top: 1px #ececec solid;
-    border-bottom: 1px #ececec solid;
   }
 
   #mkmc {
     padding-left: 0px;
-    border: 0px;
+    border-left: 0px;
+    border-top: 1px #ececec solid;
+    margin-bottom: 4px;
   }
 }
 
@@ -150,9 +150,8 @@ header #mr ul li a.active {
     font-size: 1.3em;
   }
 
-  header #mr {
-    width: 80%;
-    height: 120px;
+  #mkmc{
+    margin-bottom: 3px;
   }
 
   header #mr ul li {
