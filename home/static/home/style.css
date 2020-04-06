@@ -88,23 +88,54 @@ header #mr ul li a.active {
 }
 
 .home-pizza {
-  background-color: #f4b5e8;
-  margin: 0px 10%;
-  padding: 0px;
+  background-color: #FAE0F5;
+  margin: 0px;
+  padding: 0px 10%;
   width: 80%;
+  height: 49.5vw;
 }
 
 .home-pizza img {
   width: 100%;
   padding: 0px;
   margin: 0px;
+  height: 100%;
 }
 
 .footer {
-  width: 100%;
-  background-color: blue;
-  padding: 0px 90px;
-  height: 240px;
+  width: 80%;
+  background-color: #7F5FFF;
+  height: 200px;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 0px;
+}
+
+.footer-div-1{
+  height: 50%;
+  color: #ffffff;
+}
+
+.footer-div-1 ul{
+  padding: 0px;
+  height: 100%;
+}
+
+.footer-div-1 ul li{
+  display: inline-block;
+  font-family: "Mukta", sans-serif;
+  width: 24%;
+  text-align: center;
+}
+
+.footer-div-2{
+  height: 50%;
+  color: #E8E2FE;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 @media (max-width: 806px) {
