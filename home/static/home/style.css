@@ -87,6 +87,26 @@ header #mr ul li a.active {
   cursor: pointer;
 }
 
+.home-pizza {
+  background-color: #f4b5e8;
+  margin: 0px 10%;
+  padding: 0px;
+  width: 80%;
+}
+
+.home-pizza img {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer {
+  width: 100%;
+  background-color: blue;
+  padding: 0px 90px;
+  height: 240px;
+}
+
 @media (max-width: 806px) {
   header {
     padding: 0 20px;
@@ -113,12 +133,12 @@ header #mr ul li a.active {
   }
 
   .show {
-    transition: max-height 0.7s ease-out;
+    transition: max-height 0.65s ease-out;
     max-height: 130px;
   }
 
   .hide {
-    transition: max-height 0.7s ease-out;
+    transition: max-height 0.65s ease-out;
     max-height: 0px !important;
   }
 
@@ -150,7 +170,7 @@ header #mr ul li a.active {
     font-size: 1.3em;
   }
 
-  #mkmc{
+  #mkmc {
     margin-bottom: 3px;
   }
 
