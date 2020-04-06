@@ -88,23 +88,53 @@ header #mr ul li a.active {
 }
 
 .home-pizza {
-  background-color: #FAE0F5;
+  background-color: #fae0f5;
   margin: 0px;
   padding: 0px 10%;
   width: 80%;
   height: 49.5vw;
 }
 
-.home-pizza img {
+.mySlides img{
   width: 100%;
   padding: 0px;
   margin: 0px;
   height: 100%;
+  overflow: hidden;
+}
+
+.mySlides{
+  display: none;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .footer {
   width: 80%;
-  background-color: #7F5FFF;
+  background-color: #7f5fff;
   height: 200px;
   padding-top: 40px;
   padding-left: 10%;
@@ -112,26 +142,26 @@ header #mr ul li a.active {
   padding-bottom: 0px;
 }
 
-.footer-div-1{
+.footer-div-1 {
   height: 50%;
   color: #ffffff;
 }
 
-.footer-div-1 ul{
+.footer-div-1 ul {
   padding: 0px;
   height: 100%;
 }
 
-.footer-div-1 ul li{
+.footer-div-1 ul li {
   display: inline-block;
   font-family: "Mukta", sans-serif;
   width: 24%;
   text-align: center;
 }
 
-.footer-div-2{
+.footer-div-2 {
   height: 50%;
-  color: #E8E2FE;
+  color: #e8e2fe;
   font-family: sans-serif;
   font-weight: 300;
   font-size: 0.8em;
