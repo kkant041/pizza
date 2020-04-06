@@ -3,8 +3,23 @@
 {% block title %} WELCOME {% endblock title %}
 
 {% block navbar %}
-<li><a href="{% url 'accounts:login' %}">Log In</a></li>
-<li id="signup"><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+
+<li>
+    {% if user.username %}
+    <a href="{% url 'orders:index' %}">Order</a>
+    {% else %}
+    <a href="{% url 'accounts:login' %}">Log In</a>
+    {% endif %}
+</li>
+
+<li id="signup">
+    {% if user.username %}
+    <a href="{% url 'accounts:logout' %}">Log Out</a>
+    {% else %}
+    <a href="{% url 'accounts:signup' %}">Sign Up</a>
+    {% endif %}
+</li>
+
 <li id="mkmc">Call Us</li>
 {% endblock navbar %}
 
@@ -37,6 +52,7 @@
     </div>
 
 </div>
+
 
 {% endblock body %}
 

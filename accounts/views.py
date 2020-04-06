@@ -36,11 +36,11 @@ def login_view(request):
             login(request, user)
             return redirect('orders:index')
         else:
-            return render(request, "users/login.html", {"message": "Invalid credentials."})
+            return render(request, "accounts/login.html", {"message": "Invalid credentials."})
     else:
         return render(request, "accounts/login.html")
 
 
 def logout_view(request):
     logout(request)
-    return render(request, "users/login.html", {"message": "Logged out."})
+    return render(request, "accounts/login.html", {"message": "Logged out."})
