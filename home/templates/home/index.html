@@ -25,6 +25,17 @@
         {% load static %}
         <img src="{% static 'home/sub-1.jpeg' %}" alt="">
     </div>
+
+    <div class="mySlides fade">
+        {% load static %}
+        <img src="{% static 'home/salad-1.jpg' %}" alt="">
+    </div>
+
+    <div class="mySlides fade">
+        {% load static %}
+        <img src="{% static 'home/dinnerplatter-1.jpg' %}" alt="">
+    </div>
+
 </div>
 
 {% endblock body %}
@@ -45,5 +56,6 @@
         if (slideIndex > slides.length) { slideIndex = 1 }
         slides[slideIndex - 1].style.display = "block";
         setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }</script>
+    }
+</script>
 {% endblock js %}
