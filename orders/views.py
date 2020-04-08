@@ -65,12 +65,14 @@ def addToCart(request):
     product = request.POST["product"]
     username = request.user.username
 
-    if cartItems.objects.all().filter(username=username, product=product) == None:
-        cartItems.objects.create(username=username, product=product)
-
-    item = cartItems.objects.all().filter(username=username, product=product)
-    item.numOfProducts += 1
-    item.save()
+    try:
+        item = cartItems.objects.all().filter(username=username, product=product)
+        item.numOfProducts += 1
+        item.save()
+    except:
+        item=cartItems(username=username, product=product)
+        item.numOfProducts += 1
+        item.save()
 
     return redirect('orders:cart')
 
