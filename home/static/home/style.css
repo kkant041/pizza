@@ -223,16 +223,20 @@ header #mr ul li a.active {
   padding: 35px 2.5% 10px;
 }
 
+.orders-menuItem a{
+  text-decoration: none;
+}
 .orders-menuItem img{
   width: 100%;
   box-shadow:-5px -5px 5px #5a5854;
   border-radius: 4px;
+  text-decoration: none;
 }
 
-.orders-menuItem figcaption{
-  text-decoration: none;
-  color: #180213;
+.orders-menuItem a figcaption{
+  color: #13020f;
   text-align: center;
+  padding-top: 4px;
 }
 
 .footer {
@@ -343,6 +347,11 @@ header #mr ul li a.active {
     margin: 100px 30%;
     width: 40%;
   }
+
+  .orders-menuItem{
+    width: 41%;
+    padding: 35px 4% 10px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -384,5 +393,10 @@ header #mr ul li a.active {
   .login-form{
     margin: 100px 20%;
     width: 60%;
+  }
+
+  .orders-menuItem{
+    width: 100%;
+    padding: 35px 0px 0px;
   }
 }
