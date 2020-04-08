@@ -1,20 +1,69 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-            Order
+Order
 {% endblock title %}
 
 
 {% block body %}
+<div class="orders-selectMenu">
+    <h2 class="orders-h1">
         Select from the given menu
-        <ul>
-            <li><a href="{% url 'orders:menu0' %}" >Regular Pizza</a></li>
-            <li><a href="{% url 'orders:menu1' %}"> Sicilian Pizza</a></li>
-            <li><a href="{% url 'orders:menu2' %}"> Subs</a></li>
-            <li><a href="{% url 'orders:menu3' %}"> Pasta</a></li>
-            <li><a href="{% url 'orders:menu4' %}"> Salad</a></li>
-            <li><a href="{% url 'orders:menu5' %}"> Dinner Platter</a></li>
-        </ul>
+    </h2>
 
-        {{message}}
+    <div class="orders-menu">
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu0' %}">
+                {% load static %}
+                <img src="{% static 'home/pizza-order.jpg' %}" alt="Regular Pizza">
+                <figcaption>Regular Pizza</figcaption>
+            </a>
+        </div>
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu1' %}">
+                {% load static %}
+                <img src="{% static 'home/pizza-order.jpg' %}" alt="Sicilian Pizza">
+                <figcaption>Sicilian Pizza</figcaption>
+            </a>
+        </div>
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu2' %}">
+                {% load static %}
+                <img src="{% static 'home/subs-order.jpg' %}" alt="Subs">
+                <figcaption>Subs Pizza</figcaption>
+            </a>
+        </div>
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu3' %}">
+                {% load static %}
+                <img src="{% static 'home/pasta-order.jpg' %}" alt="Pasta">
+                <figcaption>Pasta</figcaption>
+            </a>
+        </div>
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu4' %}">
+                {% load static %}
+                <img src="{% static 'home/salad-order.jpg' %}" alt="Salad">
+                <figcaption>Salad</figcaption>
+            </a>
+        </div>
+
+        <div class="orders-menuItem">
+            <a href="{% url 'orders:menu5' %}">
+                {% load static %}
+                <img src="{% static 'home/dinnerplatter-order.jpg' %}" alt="Dinner Platter">
+                <figcaption>Dinnet Platter</figcaption>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{{message}}
 {% endblock body %}

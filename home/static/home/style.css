@@ -140,7 +140,7 @@ header #mr ul li a.active {
   width: 28%;
 }
 
-.login-h2 {
+.login-h1 {
   text-align: center;
   color: #7D0A74;
 }
@@ -202,6 +202,37 @@ header #mr ul li a.active {
   padding: 5px 5px 5px 5px;
   display: block;
   margin-bottom: 10px;
+}
+
+.orders-selectMenu {
+  margin: 50px 10%;
+}
+
+.orders-h1{
+  text-align: center;
+  color: #7D0A74;
+}
+
+.orders-menu{
+  width: 100%;
+}
+
+.orders-menuItem{
+  width: 27%;
+  display: inline-block;
+  padding: 35px 2.5% 10px;
+}
+
+.orders-menuItem img{
+  width: 100%;
+  box-shadow:-5px -5px 5px #5a5854;
+  border-radius: 4px;
+}
+
+.orders-menuItem figcaption{
+  text-decoration: none;
+  color: #180213;
+  text-align: center;
 }
 
 .footer {
