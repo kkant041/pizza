@@ -6,11 +6,23 @@ Order | Dinner Platter
 
 
 {% block body %}
-Dinner Platter
+<h1>Dinner Platter</h1>
 
-<ul>
-        {% for dinner_platter in dinner_platter_list %}
-        <li>{{ dinner_platter }}</li>
-        {% endfor %}
-</ul>
+<div class="menu-block">
+
+        <div class="menu-image">
+                {% load static %}
+                <img src="{% static 'home/dinnerplatter-order.jpg' %}" alt="Regular Pizza">
+        </div>
+
+        <div class="menu-select">
+                <div>
+                        {% for dinner_platter in dinner_platter_list %}
+                        <div>{{ dinner_platter }}</div>
+                        {% endfor %}
+                </div>
+        </div>
+
+</div>
+
 {% endblock body %}

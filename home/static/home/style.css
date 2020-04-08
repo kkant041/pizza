@@ -135,6 +135,12 @@ header #mr ul li a.active {
   }
 }
 
+h1 {
+  text-align: center;
+  color: #7D0A74;
+  font-family: 'Adamina', serif;
+}
+
 .login-form{
   margin: 100px 36%;
   width: 28%;
@@ -143,6 +149,7 @@ header #mr ul li a.active {
 .login-h1 {
   text-align: center;
   color: #7D0A74;
+  font-family: 'Adamina', serif;
 }
 
 .login-form form input {
@@ -177,6 +184,7 @@ header #mr ul li a.active {
 .signup-h1 {
   text-align: center;
   color: #7D0A74;
+  font-family: 'Adamina', serif;
 }
 
 .signup-form form input {
@@ -211,6 +219,7 @@ header #mr ul li a.active {
 .orders-h1{
   text-align: center;
   color: #7D0A74;
+  font-family: 'Adamina', serif;
 }
 
 .orders-menu{
@@ -234,7 +243,7 @@ header #mr ul li a.active {
 }
 
 .orders-menuItem a figcaption{
-  color: #13020f;
+  color: #160212;
   text-align: center;
   padding-top: 4px;
 }
@@ -277,6 +286,27 @@ header #mr ul li a.active {
   font-size: 0.7em;
   text-align: center;
   padding-top: 10px;
+}
+
+.menu-block{
+  margin: 50px 10%;
+}
+
+.menu-image{
+  width: 49%;
+  display: inline-block;
+}
+
+.menu-image img{
+  border-radius: 5px;
+  width: 100%;
+}
+
+.menu-select{
+  width: 46.5%;
+  display: inline-block;
+  padding-left: 2.5%;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 806px) {
