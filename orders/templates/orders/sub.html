@@ -1,16 +1,41 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-            Order | Subs
+Order | Subs
 {% endblock title %}
-    
+
 
 {% block body %}
-        Subs
+<h1>Subs</h1>
 
-        <ul>
-                {% for subs in sub_list %}
-                <li>{{ subs }}</li>     
-                {% endfor %}
-        </ul>
+<div class="menu-block">
+
+        <div class="menu-image">
+                {% load static %}
+                <img src="{% static 'home/subs-order.jpg' %}" alt="Regular Pizza">
+        </div>
+
+        <div class="menu-select">
+                <form method="post" action="{% url 'orders:addToCart' %}">
+                        <table>
+                                <tr>
+                                        <th>Food Item</th>
+                                        <th>Small</th>
+                                        <th>Large</th>
+                                </tr>
+                                {% for sub in sub_list %}
+                                <tr>
+                                        <td>{{ sub.sub_name }}</td>
+                                        <td><input type="radio" name="row-1" data-col="1">{{ sub.sub_small_price }}
+                                        </td>
+                                        <td><input type="radio" name="row-1" data-col="2">{{ sub.sub_large_price }}
+                                        </td>
+                                </tr>
+                                {% endfor %}
+                        </table>
+                        <button type="submit">Add to cart</button>
+                </form>
+        </div>
+
+</div>
 {% endblock body %}

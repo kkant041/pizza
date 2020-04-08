@@ -1,16 +1,43 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-            Order | Sicilian Pizza
+Order | Sicilian Pizza
 {% endblock title %}
-    
+
 
 {% block body %}
-        Sicilian Pizza
 
-        <ul>
-                {% for pizza in sicilianpizza_list %}
-                <li>{{ pizza }}</li>     
-                {% endfor %}
-        </ul>
+<h1>Sicilian Pizza</h1>
+
+<div class="menu-block">
+
+        <div class="menu-image">
+                {% load static %}
+                <img src="{% static 'home/pizza-order.jpg' %}" alt="Regular Pizza">
+        </div>
+
+        <div class="menu-select">
+                <form method="post" action="{% url 'orders:addToCart' %}">
+                        <table>
+                                <tr>
+                                        <th>Food Item</th>
+                                        <th>Small</th>
+                                        <th>Large</th>
+                                </tr>
+                                {% for pizza in sicilianpizza_list %}
+                                <tr>
+                                        <td>{{ pizza.sic_pizza }}</td>
+                                        <td><input type="radio" name="row-1" data-col="1">{{ pizza.pizza_small_price }}
+                                        </td>
+                                        <td><input type="radio" name="row-1" data-col="2">{{ pizza.pizza_large_price }}
+                                        </td>
+                                </tr>
+                                {% endfor %}
+                        </table>
+                        <button type="submit">Add to cart</button>
+                </form>
+        </div>
+
+</div>
+
 {% endblock body %}

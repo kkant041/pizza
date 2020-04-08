@@ -1,16 +1,35 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-            Order | Pasta
+Order | Pasta
 {% endblock title %}
-    
+
 
 {% block body %}
-        Pasta
 
-        <ul>
-                {% for pasta in pasta_list %}
-                <li>{{ pasta }}</li>     
-                {% endfor %}
-        </ul>
+<h1>Pasta</h1>
+
+<div class="menu-block">
+
+        <div class="menu-image">
+                {% load static %}
+                <img src="{% static 'home/pasta-order.jpg' %}" alt="Regular Pizza">
+        </div>
+
+        <div class="menu-select">
+                <form method="post" action="{% url 'orders:addToCart' %}">
+                        <table>
+                                {% for pasta in pasta_list %}
+                                <tr>
+                                        <td>{{ pasta.pasta_name }}</td>
+                                        <td><input type="radio" name="row-1" data-col="1">{{ pasta.pasta_price }}</td>
+                                </tr>
+                                {% endfor %}
+                        </table>
+                        <button type="submit">Add to cart</button>
+                </form>
+        </div>
+
+</div>
+
 {% endblock body %}

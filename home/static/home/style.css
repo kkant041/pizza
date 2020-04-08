@@ -3,7 +3,7 @@ body {
   margin: 0px;
   background: #fff0fc;
   top: 70px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 header {
@@ -289,11 +289,11 @@ h1 {
 }
 
 .menu-block{
-  margin: 50px 10%;
+  margin: 50px 8%;
 }
 
 .menu-image{
-  width: 49%;
+  width: 48%;
   display: inline-block;
 }
 
@@ -303,10 +303,20 @@ h1 {
 }
 
 .menu-select{
-  width: 46.5%;
+  width: 42.5%;
   display: inline-block;
-  padding-left: 2.5%;
+  padding-left: 8%;
   padding-bottom: 20px;
+}
+
+.menu-select th{
+  color: #7D0A74;
+  padding: 2px;
+}
+
+.menu-select td{
+  color: #160212;
+  padding: 5px;
 }
 
 @media (max-width: 806px) {
