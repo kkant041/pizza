@@ -1,7 +1,7 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-Welcome
+Sign Up
 {% endblock title %}
 
 {% block navbar %}
@@ -12,9 +12,11 @@ Welcome
 
 {% block body %}
 <h2>Sign up</h2>
-<form method="post" action="{% url 'accounts:signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="Submit">Sign up</button>
-</form>
+<div class="signup-form">
+    <form method="post" action="{% url 'accounts:signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="Submit">Sign up</button>
+    </form>
+</div>
 {% endblock body %}
