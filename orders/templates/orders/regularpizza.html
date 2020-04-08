@@ -18,6 +18,7 @@ Order | Regular Pizza
 
         <div class="menu-select">
                 <form method="post" action="{% url 'orders:addToCart' %}">
+                        {% csrf_token %}
                         <table>
                                 <tr>
                                         <th>Food Item</th>
@@ -27,9 +28,9 @@ Order | Regular Pizza
                                 {% for pizza in regularpizza_list %}
                                 <tr>
                                         <td>{{ pizza.reg_pizza }}</td>
-                                        <td><input type="radio" name="row-1" data-col="1">{{ pizza.reg_small_price }}
+                                        <td><input type="radio" name="product" value="reg_small_pizza" data-col="1">{{ pizza.reg_small_price }}
                                         </td>
-                                        <td><input type="radio" name="row-1" data-col="2">{{ pizza.reg_large_price }}
+                                        <td><input type="radio" name="product" value="reg_large_pizza" data-col="2">{{ pizza.reg_large_price }}
                                         </td>
                                 </tr>
                                 {% endfor %}

@@ -62,17 +62,15 @@ def menu5(request):
 
 @login_required()
 def addToCart(request):
-    products = request.POST["products"]
+    product = request.POST["product"]
     username = request.user.username
 
-    for product in products:
+    if cartItems.objects.all().filter(username=username, product=product) == None:
+        cartItems.objects.create(username=username, product=product)
 
-        if cartItems.objects.all().filter(username=username, product=product) == None:
-            cartItems.objects.create(username=username, product=product)
-
-        item = cartItems.objects.all().filter(username=username, product=product)
-        item.numOfProduct += products[product]
-        item.save()
+    item = cartItems.objects.all().filter(username=username, product=product)
+    item.numOfProducts += 1
+    item.save()
 
     return redirect('orders:cart')
 

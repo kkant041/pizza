@@ -10,6 +10,7 @@ Order | Salad
 <h1>Salad</h1>
 
 <div class="menu-block">
+        {% csrf_token %}
 
         <div class="menu-image">
                 {% load static %}
@@ -22,7 +23,7 @@ Order | Salad
                                 {% for salad in salad_list %}
                                 <tr>
                                         <td>{{ salad.salad_name }}</td>
-                                        <td><input type="radio" name="row-1" data-col="1">{{ salad.salad_price }}</td>
+                                        <td><input type="radio" name="product" value="salad_price" data-col="1">{{ salad.salad_price }}</td>
                                 </tr>
                                 {% endfor %}
                         </table>

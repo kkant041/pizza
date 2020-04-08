@@ -17,6 +17,7 @@ Order | Dinner Platter
 
         <div class="menu-select">
                 <form method="post" action="{% url 'orders:addToCart' %}">
+                        {% csrf_token %}
                         <table>
                                 <tr>
                                         <th>Food Item</th>
@@ -26,9 +27,9 @@ Order | Dinner Platter
                                 {% for dinner_platter in dinner_platter_list %}
                                 <tr>
                                         <td>{{ dinner_platter.platter_name }}</td>
-                                        <td><input type="radio" name="row-1"
+                                        <td><input type="radio" name="product" value="platter_small_price"
                                                         data-col="1">{{ dinner_platter.platter_small_price }}</td>
-                                        <td><input type="radio" name="row-1"
+                                        <td><input type="radio" name="product" value="platter_large_price"
                                                         data-col="2">{{ dinner_platter.platter_large_price }}</td>
                                 </tr>
                                 {% endfor %}
