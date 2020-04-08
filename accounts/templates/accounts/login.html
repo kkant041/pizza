@@ -11,7 +11,6 @@ Log In
 
 
 {% block body %}
-<h2 class="login-h2">Log In</h2>
 {% if message %}
 <div>
     {{ message }}
@@ -19,6 +18,7 @@ Log In
 {% endif %}
 
 <div class="login-form">
+    <h2 class="login-h2">Log In</h2>
     <form method="post" action="{% url 'accounts:login' %}">
         {% csrf_token %}
         <input type="text" name="username" maxlength="150" autofocus required><br>
