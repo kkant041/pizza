@@ -95,48 +95,105 @@ def cart(request):
     for userCartItemInfo in userCartItemsInfo:
         productID = userCartItemInfo.productID
         productType = userCartItemInfo.productType
+        numOfProduct = userCartItemInfo.numOfProducts
         item = []
 
         try:
             itemInfo = regularpizza.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "reg_pizza")
             itemPrice = getattr(itemInfo, productType)
-            if productType == reg_small_price:
+            if productType == "reg_small_price":
                 itemType = "S"
             else:
                 itemType = "L"
-            item.extend(itemName, itemPrice, itemType)
+
+            item.append("Regular Pizza")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            item.append(itemType)
             items.append(item)
         except:
             pass
 
         try:
             itemInfo = sicilianpizza.objects.all().get(productID=productID)
-            items.append(itemInfo)
+            itemName = getattr(itemInfo, "sic_pizza")
+            itemPrice = getattr(itemInfo, productType)
+            if productType == "sic_small_price":
+                itemType = "S"
+            else:
+                itemType = "L"
+
+            item.append("Sicilian Pizza")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            item.append(itemType)
+            items.append(item)
         except:
             pass
 
         try:
             itemInfo = sub.objects.all().get(productID=productID)
-            items.append(itemInfo)
+            itemName = getattr(itemInfo, "sub_name")
+            itemPrice = getattr(itemInfo, productType)
+            if productType == "sic_small_price":
+                itemType = "S"
+            else:
+                itemType = "L"
+
+            item.append("Subs")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            item.append(itemType)
+            items.append(item)
         except:
             pass
 
         try:
             itemInfo = pasta.objects.all().get(productID=productID)
-            items.append(itemInfo)
+            itemName = getattr(itemInfo, "pasta_name")
+            itemPrice = getattr(itemInfo, productType)
+
+            item.append("Pasta")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            items.append(item)
         except:
             pass
 
         try:
             itemInfo = salad.objects.all().get(productID=productID)
-            items.append(itemInfo)
+            itemName = getattr(itemInfo, "salad_name")
+            itemPrice = getattr(itemInfo, productType)
+
+            item.append("Salad")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            items.append(item)
         except:
             pass
 
         try:
             itemInfo = dinner_platter.objects.all().get(productID=productID)
-            items.append(itemInfo)
+            itemInfo = sub.objects.all().get(productID=productID)
+            itemName = getattr(itemInfo, "platter_name")
+            itemPrice = getattr(itemInfo, productType)
+            if productType == "platter_small_price":
+                itemType = "S"
+            else:
+                itemType = "L"
+
+            item.append("Dinner Platter")
+            item.append(itemName)
+            item.append(itemPrice)
+            item.append(numOfProduct)
+            item.append(itemType)
+            items.append(item)
         except:
             pass
 
