@@ -101,7 +101,7 @@ def cart(request):
         try:
             itemInfo = regularpizza.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "reg_pizza")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
             if productType == "reg_small_price":
                 itemType = "S"
             else:
@@ -119,7 +119,7 @@ def cart(request):
         try:
             itemInfo = sicilianpizza.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "sic_pizza")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
             if productType == "sic_small_price":
                 itemType = "S"
             else:
@@ -137,7 +137,7 @@ def cart(request):
         try:
             itemInfo = sub.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "sub_name")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
             if productType == "sic_small_price":
                 itemType = "S"
             else:
@@ -155,7 +155,7 @@ def cart(request):
         try:
             itemInfo = pasta.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "pasta_name")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
 
             item.append("Pasta")
             item.append(itemName)
@@ -168,7 +168,7 @@ def cart(request):
         try:
             itemInfo = salad.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "salad_name")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
 
             item.append("Salad")
             item.append(itemName)
@@ -182,7 +182,7 @@ def cart(request):
             itemInfo = dinner_platter.objects.all().get(productID=productID)
             itemInfo = sub.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "platter_name")
-            itemPrice = getattr(itemInfo, productType)
+            itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
             if productType == "platter_small_price":
                 itemType = "S"
             else:

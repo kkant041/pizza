@@ -9,10 +9,26 @@ Cart
 <h1>Cart Items</h1>
 
 {% if userCartItems %}
-{% for items in userCartItems %}
-<div>{{items}}</div>
-{% endfor %}
-<div class="cart-checkout">Checkout</div>
+<div class="cart-block">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Number Of Items</th>
+            <th></th>
+        </tr>
+        {% for items in userCartItems %}
+        <tr>
+            {% for item in items %}
+            <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="cart-checkout"><form action=""><button type="submit">Checkout</button></form></div>
 {% else %}
 <div class="cart-emptyCart">Yor cart is empty</div>
 {% endif %}

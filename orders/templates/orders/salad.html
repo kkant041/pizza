@@ -19,6 +19,7 @@ Order | Salad
 
         <div class="menu-select">
                 <form method="post" action="{% url 'orders:addToCart' %}">
+                        {% csrf_token %}
                         <table>
                                 {% for salad in salad_list %}
                                 <tr>
