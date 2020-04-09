@@ -85,7 +85,38 @@ def addToCart(request):
 @login_required()
 def cart(request):
     username = request.user.username
-    userCartItemsInfo: cartItems.objects.all().filter(username=username)
-    items = ""
+    userCartItemsInfo = cartItems.objects.all().filter(username=username)
+    items = []
 
-    return render(request, 'orders/cart.html')
+    for userCartItemInfo in userCartItemsInfo:
+        productID = userCartItemInfo[productID]
+        productType = userCartItemInfo[productType]
+
+        try:
+            itemInfo = regularpizza.objects.all().filter(productID=productID)
+            items.append(itemInfo)
+        except:
+            try:
+                itemInfo = sicilianpizza.objects.all().filter(productID=productID)
+                items.append(itemInfo)
+            except:
+                try:
+                    itemInfo = sub.objects.all().filter(productID=productID)
+                    items.append(itemInfo)
+                except:
+                    try:
+                        itemInfo = pasta.objects.all().filter(productID=productID)
+                        items.append(itemInfo)
+                    except:
+                        try:
+                            itemInfo = salad.objects.all().filter(productID=productID)
+                            items.append(itemInfo)
+                        except:
+                            itemInfo = dinner_platter.objects.all().filter(productID=productID)
+                            items.append(itemInfo)
+
+    context = {
+        'userCartItems': items
+    }
+
+    return render(request, 'orders/cart.html', context)
