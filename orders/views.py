@@ -80,7 +80,7 @@ def addToCart(request):
 @login_required()
 def cart(request):
     username = request.user.username
-    context = {
-        'userCartItems': cartItems.objects.all().filter(username=username)
-    }
-    return render(request, 'orders/cart.html', context)
+    userCartItems: cartItems.objects.all().filter(username=username)
+    items=""
+
+    return render(request, 'orders/cart.html')

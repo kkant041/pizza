@@ -8,6 +8,7 @@ class regularpizza(models.Model):
 
     # TODO: Define fields here
     reg_pizza = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     reg_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     reg_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -19,7 +20,7 @@ class regularpizza(models.Model):
 
     def __str__(self):
         """Unicode representation of regularpizza."""
-        return '%s %s %s' % (self.reg_pizza, self.reg_small_price, self.reg_large_price)
+        return '%s %s %s %s' % (self.reg_pizza, self.productID, self.reg_small_price, self.reg_large_price)
 
 
 class sicilianpizza(models.Model):
@@ -27,6 +28,7 @@ class sicilianpizza(models.Model):
 
     # TODO: Define fields here
     sic_pizza = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     sic_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     sic_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -38,7 +40,7 @@ class sicilianpizza(models.Model):
 
     def __str__(self):
         """Unicode representation of sicilianpizza."""
-        return '%s %s %s' % (self.sic_pizza, self.sic_small_price, self.sic_large_price)
+        return '%s %s %s %s' % (self.sic_pizza, self.productID, self.sic_small_price, self.sic_large_price)
 
 
 class topping(models.Model):
@@ -63,6 +65,7 @@ class sub(models.Model):
 
     # TODO: Define fields here
     sub_name = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     sub_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     sub_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -74,7 +77,7 @@ class sub(models.Model):
 
     def __str__(self):
         """Unicode representation of sub."""
-        return '%s %s %s' % (self.sub_name, self.sub_small_price, self.sub_large_price)
+        return '%s %s %s %s' % (self.sub_name, self.productID, self.sub_small_price, self.sub_large_price)
 
 
 class pasta(models.Model):
@@ -82,6 +85,7 @@ class pasta(models.Model):
 
     # TODO: Define fields here
     pasta_name = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     pasta_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
@@ -92,7 +96,7 @@ class pasta(models.Model):
 
     def __str__(self):
         """Unicode representation of pasta."""
-        return '%s %s' % (self.pasta_name, self.pasta_price)
+        return '%s %s %s' % (self.pasta_name, self.productID, self.pasta_price)
 
 
 class salad(models.Model):
@@ -100,6 +104,7 @@ class salad(models.Model):
 
     # TODO: Define fields here
     salad_name = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     salad_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
@@ -110,7 +115,7 @@ class salad(models.Model):
 
     def __str__(self):
         """Unicode representation of salad."""
-        return '%s %s' % (self.salad_name, self.salad_price)
+        return '%s %s %s' % (self.salad_name, self.productID, self.salad_price)
 
 
 class dinner_platter(models.Model):
@@ -118,6 +123,7 @@ class dinner_platter(models.Model):
 
     # TODO: Define fields here
     platter_name = models.CharField(max_length=100)
+    productID = models.PositiveIntegerField
     platter_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     platter_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -129,7 +135,8 @@ class dinner_platter(models.Model):
 
     def __str__(self):
         """Unicode representation of dinner_platter."""
-        return '%s %s %s' % (self.platter_name, self.platter_small_price, self.platter_large_price)
+        return '%s %s %s %s' % (self.platter_name, self.productID, self.platter_small_price, self.platter_large_price)
+
 
 class cartItems(models.Model):
     """Model definition for cartItems."""
