@@ -28,9 +28,13 @@ Order | Regular Pizza
                                 {% for pizza in regularpizza_list %}
                                 <tr>
                                         <td>{{ pizza.reg_pizza }}</td>
-                                        <td><input type="radio" name="product" value="reg_small_price" data-col="1">{{ pizza.reg_small_price }}
+                                        <td><input type="radio" name="product"
+                                                        value="{{ pizza.productID }} reg_small_price"
+                                                        data-col="1">{{ pizza.reg_small_price }}
                                         </td>
-                                        <td><input type="radio" name="product" value="reg_large_price" data-col="2">{{ pizza.reg_large_price }}
+                                        <td><input type="radio" name="product"
+                                                        value="{{ pizza.productID }} reg_large_price"
+                                                        data-col="2">{{ pizza.reg_large_price }}
                                         </td>
                                 </tr>
                                 {% endfor %}

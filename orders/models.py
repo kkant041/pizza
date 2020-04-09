@@ -8,7 +8,7 @@ class regularpizza(models.Model):
 
     # TODO: Define fields here
     reg_pizza = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     reg_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     reg_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -28,7 +28,7 @@ class sicilianpizza(models.Model):
 
     # TODO: Define fields here
     sic_pizza = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     sic_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     sic_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -65,7 +65,7 @@ class sub(models.Model):
 
     # TODO: Define fields here
     sub_name = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     sub_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     sub_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -85,7 +85,7 @@ class pasta(models.Model):
 
     # TODO: Define fields here
     pasta_name = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     pasta_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
@@ -104,7 +104,7 @@ class salad(models.Model):
 
     # TODO: Define fields here
     salad_name = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     salad_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
@@ -123,7 +123,7 @@ class dinner_platter(models.Model):
 
     # TODO: Define fields here
     platter_name = models.CharField(max_length=100)
-    productID = models.PositiveIntegerField
+    productID = models.PositiveIntegerField()
     platter_small_price = models.DecimalField(max_digits=10, decimal_places=2)
     platter_large_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -143,7 +143,7 @@ class cartItems(models.Model):
 
     # TODO: Define fields here
     username = models.CharField(max_length=100)
-    product = models.CharField(max_length=100)
+    product = models.PositiveIntegerField(default=0)
     numOfProducts = models.PositiveIntegerField(default=0)
 
     class Meta:

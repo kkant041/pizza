@@ -23,7 +23,8 @@ Order | Pasta
                                 {% for pasta in pasta_list %}
                                 <tr>
                                         <td>{{ pasta.pasta_name }}</td>
-                                        <td><input type="radio" name="product" value="pasta_price" data-col="1">{{ pasta.pasta_price }}</td>
+                                        <td><input type="radio" name="product" value="{{ pasta.productID }} pasta_price"
+                                                        data-col="1">{{ pasta.pasta_price }}</td>
                                 </tr>
                                 {% endfor %}
                         </table>
