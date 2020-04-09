@@ -1,0 +1,48 @@
+for userCartItemInfo in userCartItemsInfo:
+        productID = userCartItemInfo["productID"]
+        productType = userCartItemInfo["productType"]
+
+        try:
+            itemInfo = regularpizza.objects.all().filter(productID=productID)
+            items.append(itemInfo)
+        except:
+            try:
+                itemInfo = sicilianpizza.objects.all().filter(productID=productID)
+                items.append(itemInfo)
+            except:
+                try:
+                    itemInfo = sub.objects.all().filter(productID=productID)
+                    items.append(itemInfo)
+                except:
+                    try:
+                        itemInfo = pasta.objects.all().filter(productID=productID)
+                        items.append(itemInfo)
+                    except:
+                        try:
+                            itemInfo = salad.objects.all().filter(productID=productID)
+                            items.append(itemInfo)
+                        except:
+                            itemInfo = dinner_platter.objects.all().filter(productID=productID)
+                            items.append(itemInfo)
+
+
+//addToCart
+//1
+try:
+        item = cartItems.objects.all().get(
+            username=username, productID=productID, productType=productType)
+        item.numOfProducts += 1
+        item.save()
+
+    except:
+        item = cartItems(username=username, productID=productID,
+                                        productType=productType)
+        item.numOfProducts += 1
+        item.save()
+
+//2
+
+item = cartItems.objects.get_or_create(
+        username=username, productID=productID, productType=productType)
+    item.numOfProducts += 1
+    item.save()

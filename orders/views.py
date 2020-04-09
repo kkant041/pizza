@@ -69,14 +69,19 @@ def addToCart(request):
     username = request.user.username
 
     try:
-        item = cartItems.objects.all().filter(
+        item = cartItems.objects.all().get(
             username=username, productID=productID, productType=productType)
-        item.numOfProducts += 1
+        noOfProducts = getattr(item, "numOfProducts")
+        noOfProducts += 1
+        setattr(item, "numOfProducts", noOfProducts)
         item.save()
+
     except:
         item = cartItems(username=username, productID=productID,
                          productType=productType)
-        item.numOfProducts += 1
+        noOfProducts = getattr(item, "numOfProducts")
+        noOfProducts += 1
+        setattr(item, "numOfProducts", noOfProducts)
         item.save()
 
     return redirect('orders:cart')
@@ -87,33 +92,53 @@ def cart(request):
     username = request.user.username
     userCartItemsInfo = cartItems.objects.all().filter(username=username)
     items = []
-
     for userCartItemInfo in userCartItemsInfo:
-        productID = userCartItemInfo[productID]
-        productType = userCartItemInfo[productType]
+        productID = userCartItemInfo.productID
+        productType = userCartItemInfo.productType
+        item = []
 
         try:
-            itemInfo = regularpizza.objects.all().filter(productID=productID)
+            itemInfo = regularpizza.objects.all().get(productID=productID)
+            itemName = getattr(itemInfo, "reg_pizza")
+            itemPrice = getattr(itemInfo, productType)
+            if productType == reg_small_price:
+                itemType = "S"
+            else:
+                itemType = "L"
+            item.extend(itemName, itemPrice, itemType)
+            items.append(item)
+        except:
+            pass
+
+        try:
+            itemInfo = sicilianpizza.objects.all().get(productID=productID)
             items.append(itemInfo)
         except:
-            try:
-                itemInfo = sicilianpizza.objects.all().filter(productID=productID)
-                items.append(itemInfo)
-            except:
-                try:
-                    itemInfo = sub.objects.all().filter(productID=productID)
-                    items.append(itemInfo)
-                except:
-                    try:
-                        itemInfo = pasta.objects.all().filter(productID=productID)
-                        items.append(itemInfo)
-                    except:
-                        try:
-                            itemInfo = salad.objects.all().filter(productID=productID)
-                            items.append(itemInfo)
-                        except:
-                            itemInfo = dinner_platter.objects.all().filter(productID=productID)
-                            items.append(itemInfo)
+            pass
+
+        try:
+            itemInfo = sub.objects.all().get(productID=productID)
+            items.append(itemInfo)
+        except:
+            pass
+
+        try:
+            itemInfo = pasta.objects.all().get(productID=productID)
+            items.append(itemInfo)
+        except:
+            pass
+
+        try:
+            itemInfo = salad.objects.all().get(productID=productID)
+            items.append(itemInfo)
+        except:
+            pass
+
+        try:
+            itemInfo = dinner_platter.objects.all().get(productID=productID)
+            items.append(itemInfo)
+        except:
+            pass
 
     context = {
         'userCartItems': items
