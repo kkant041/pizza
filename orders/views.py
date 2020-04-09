@@ -63,16 +63,19 @@ def menu5(request):
 @login_required()
 def addToCart(request):
     productInfo = request.POST["productInfo"]
-    productID=productInfo[0]
-    productType=productInfo[1]
+    productInfoList = productInfo.split()
+    productID = productInfoList[0]
+    productType = productInfoList[1]
     username = request.user.username
 
     try:
-        item = cartItems.objects.all().filter(username=username, productID=productID, productType=productType)
+        item = cartItems.objects.all().filter(
+            username=username, productID=productID, productType=productType)
         item.numOfProducts += 1
         item.save()
     except:
-        item=cartItems(username=username, productID=productID, productType=productType)
+        item = cartItems(username=username, productID=productID,
+                         productType=productType)
         item.numOfProducts += 1
         item.save()
 
@@ -82,7 +85,7 @@ def addToCart(request):
 @login_required()
 def cart(request):
     username = request.user.username
-    userCartItems: cartItems.objects.all().filter(username=username)
-    items=""
+    userCartItemsInfo: cartItems.objects.all().filter(username=username)
+    items = ""
 
     return render(request, 'orders/cart.html')
