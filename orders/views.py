@@ -202,3 +202,8 @@ def cart(request):
     }
 
     return render(request, 'orders/cart.html', context)
+
+
+@login_required()
+def thankYou(request):
+    return render(request, 'orders/thankYou.html')
