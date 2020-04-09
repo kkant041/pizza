@@ -28,9 +28,9 @@ Order | Sicilian Pizza
                                 {% for pizza in sicilianpizza_list %}
                                 <tr>
                                         <td>{{ pizza.sic_pizza }}</td>
-                                        <td><input type="radio" name="product" value="{{ pizza.productID }} pizza_small_price" data-col="1">{{ pizza.pizza_small_price }}
+                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} pizza_small_price" data-col="1">{{ pizza.pizza_small_price }}
                                         </td>
-                                        <td><input type="radio" name="product" value="{{ pizza.productID }} pizza_large_price" data-col="2">{{ pizza.pizza_large_price }}
+                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} pizza_large_price" data-col="2">{{ pizza.pizza_large_price }}
                                         </td>
                                 </tr>
                                 {% endfor %}

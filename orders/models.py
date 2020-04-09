@@ -143,7 +143,8 @@ class cartItems(models.Model):
 
     # TODO: Define fields here
     username = models.CharField(max_length=100)
-    product = models.PositiveIntegerField(default=0)
+    productID = models.PositiveIntegerField(default=0)
+    productType = models.CharField(max_length=100)
     numOfProducts = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -154,4 +155,4 @@ class cartItems(models.Model):
 
     def __str__(self):
         """Unicode representation of cartItems."""
-        return '%s %s %i' % (self.username, self.product, self.numOfProducts)
+        return '%s %s %s %i' % (self.username, self.productID, self.productType, self.numOfProducts)

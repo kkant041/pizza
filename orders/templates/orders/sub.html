@@ -27,9 +27,13 @@ Order | Subs
                                 {% for sub in sub_list %}
                                 <tr>
                                         <td>{{ sub.sub_name }}</td>
-                                        <td><input type="radio" name="product" value="{{ sub.productID }} sub_small_price" data-col="1">{{ sub.sub_small_price }}
+                                        <td><input type="radio" name="productInfo"
+                                                        value="{{ sub.productID }} sub_small_price"
+                                                        data-col="1">{{ sub.sub_small_price }}
                                         </td>
-                                        <td><input type="radio" name="product" value="{{ sub.productID }} sub_large_price" data-col="2">{{ sub.sub_large_price }}
+                                        <td><input type="radio" name="productInfo"
+                                                        value="{{ sub.productID }} sub_large_price"
+                                                        data-col="2">{{ sub.sub_large_price }}
                                         </td>
                                 </tr>
                                 {% endfor %}

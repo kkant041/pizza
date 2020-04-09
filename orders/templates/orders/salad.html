@@ -23,7 +23,7 @@ Order | Salad
                                 {% for salad in salad_list %}
                                 <tr>
                                         <td>{{ salad.salad_name }}</td>
-                                        <td><input type="radio" name="product" value="{{ salad.productID }} salad_price" data-col="1">{{ salad.salad_price }}</td>
+                                        <td><input type="radio" name="productInfo" value="{{ salad.productID }} salad_price" data-col="1">{{ salad.salad_price }}</td>
                                 </tr>
                                 {% endfor %}
                         </table>

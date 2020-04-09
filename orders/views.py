@@ -62,15 +62,17 @@ def menu5(request):
 
 @login_required()
 def addToCart(request):
-    product = request.POST["product"]
+    productInfo = request.POST["productInfo"]
+    productID=productInfo[0]
+    productType=productInfo[1]
     username = request.user.username
 
     try:
-        item = cartItems.objects.all().filter(username=username, product=product)
+        item = cartItems.objects.all().filter(username=username, productID=productID, productType=productType)
         item.numOfProducts += 1
         item.save()
     except:
-        item=cartItems(username=username, product=product)
+        item=cartItems(username=username, productID=productID, productType=productType)
         item.numOfProducts += 1
         item.save()
 

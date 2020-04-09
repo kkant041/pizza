@@ -27,10 +27,10 @@ Order | Dinner Platter
                                 {% for dinner_platter in dinner_platter_list %}
                                 <tr>
                                         <td>{{ dinner_platter.platter_name }}</td>
-                                        <td><input type="radio" name="product"
+                                        <td><input type="radio" name="productInfo"
                                                         value="{{ dinner_platter.productID }} platter_small_price"
                                                         data-col="1">{{ dinner_platter.platter_small_price }}</td>
-                                        <td><input type="radio" name="product"
+                                        <td><input type="radio" name="productInfo"
                                                         value="{{ dinner_platter.productID }} platter_large_price"
                                                         data-col="2">{{ dinner_platter.platter_large_price }}</td>
                                 </tr>
