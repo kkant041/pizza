@@ -4,11 +4,17 @@
 
 {% block navbar %}
 
+
+    {% if user.username %}
+    <li class="li"><a href="{% url 'orders:index' %}">Order</a></li>
+    {% else %}
+    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+    {% endif %}
+
+
 <li>
     {% if user.username %}
-    <a href="{% url 'orders:index' %}">Order</a>
-    {% else %}
-    <a href="{% url 'accounts:login' %}">Log In</a>
+    <a href="{% url 'orders:cart' %}">Cart</a>
     {% endif %}
 </li>
 

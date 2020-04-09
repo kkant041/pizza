@@ -4,6 +4,19 @@
 Order
 {% endblock title %}
 
+{% block navbar %}
+
+<li>
+    <a href="{% url 'orders:cart' %}">Cart</a>
+</li>
+
+<li id="signup">
+    <a href="{% url 'accounts:logout' %}">Log Out</a>
+</li>
+
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
+
 
 {% block body %}
 <div class="orders-selectMenu">

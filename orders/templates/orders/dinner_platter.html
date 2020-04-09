@@ -4,6 +4,23 @@
 Order | Dinner Platter
 {% endblock title %}
 
+{% block navbar %}
+
+<li class="li">
+    <a href="{% url 'orders:index' %}">Order</a>
+</li>
+
+<li>
+    <a href="{% url 'orders:cart' %}">Cart</a>
+</li>
+
+<li id="signup">
+    <a href="{% url 'accounts:logout' %}">Log Out</a>
+</li>
+
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
+
 
 {% block body %}
 <h1>Dinner Platter</h1>

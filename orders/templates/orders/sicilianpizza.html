@@ -4,6 +4,23 @@
 Order | Sicilian Pizza
 {% endblock title %}
 
+{% block navbar %}
+
+<li class="li">
+    <a href="{% url 'orders:index' %}">Order</a>
+</li>
+
+<li>
+    <a href="{% url 'orders:cart' %}">Cart</a>
+</li>
+
+<li id="signup">
+    <a href="{% url 'accounts:logout' %}">Log Out</a>
+</li>
+
+<li id="mkmc">Call Us</li>
+{% endblock navbar %}
+
 
 {% block body %}
 
@@ -28,9 +45,9 @@ Order | Sicilian Pizza
                                 {% for pizza in sicilianpizza_list %}
                                 <tr>
                                         <td>{{ pizza.sic_pizza }}</td>
-                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} pizza_small_price" data-col="1">{{ pizza.pizza_small_price }}
+                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} sic_small_price" data-col="1">{{ pizza.sic_small_price }}
                                         </td>
-                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} pizza_large_price" data-col="2">{{ pizza.pizza_large_price }}
+                                        <td><input type="radio" name="productInfo" value="{{ pizza.productID }} sic_large_price" data-col="2">{{ pizza.sic_large_price }}
                                         </td>
                                 </tr>
                                 {% endfor %}

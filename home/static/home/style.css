@@ -393,7 +393,7 @@ h1 {
 
   .show {
     transition: max-height 0.6s ease-out;
-    max-height: 130px;
+    max-height: 150px;
   }
 
   .hide {
@@ -438,6 +438,10 @@ h1 {
   .orders-menuItem {
     width: 41%;
     padding: 35px 4% 10px;
+  }
+
+  .li{
+    border-bottom: 1px #ececec solid;
   }
 }
 

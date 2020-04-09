@@ -180,7 +180,6 @@ def cart(request):
 
         try:
             itemInfo = dinner_platter.objects.all().get(productID=productID)
-            itemInfo = sub.objects.all().get(productID=productID)
             itemName = getattr(itemInfo, "platter_name")
             itemPrice = '${:,.2f}'.format(getattr(itemInfo, productType))
             if productType == "platter_small_price":
